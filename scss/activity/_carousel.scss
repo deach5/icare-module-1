@@ -1,0 +1,86 @@
+@import "../../node_modules/owl.carousel/src/scss/owl.carousel";
+
+.carousel-controls {
+    text-align: right;
+}
+
+.carousel-indicators {
+    position: static;
+    margin-bottom: 0;
+    transform: none;
+    margin-top: 10px;
+}
+
+.carousel-indicators li {
+    width: 1rem;
+    height: 1rem;
+    background: #bebaba;
+    border: 0;
+    opacity: 1;
+    border-radius: 50%;
+
+    &.active {
+        background: $primary;
+    }
+}
+
+.carousel-question {
+    .carousel-item {
+        min-height: 500px;
+    }
+}
+
+.carousel-controls,
+.carousel-btns {
+    display: flex;
+}
+
+.carousel-btns {
+    svg {
+        //width: 16px;
+    }
+}
+
+[data-activity="slide-container"] a[data-slide],
+[data-activity="slide-container"] button[data-slide],
+.carousel-controls a[data-slide],
+.carousel-controls button[data-slide] {
+    position: relative;
+    padding: 0;
+    margin: 0 1rem;
+    height: 40px;
+    width: 40px;
+    margin: 0 5px;
+    -webkit-transition: -webkit-transform 250ms ease-out;
+    -moz-transition:    -moz-transform 250ms ease-out;
+    -o-transition:      -o-transform 250ms ease-out;
+    -ms-transition:     -ms-transform 250ms ease-out;
+    transition:         transform 250ms ease-out;
+}
+
+.on-last-slide{
+    .carousel-controls{
+        [data-slide="next"]{
+            transform: rotate(90deg);
+        }
+    }
+}
+
+[data-activity="slide-container"] a[data-slide],
+.carousel-controls a[data-slide] {
+    font-size: 0;
+    text-indent: -10000px;
+}
+
+
+.carousel-btns button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+}
+
+.btn-scenario-prev svg{
+    transform: scaleX(-1);
+}
+

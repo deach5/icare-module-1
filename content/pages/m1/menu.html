@@ -1,0 +1,126 @@
+<style>
+    #page-title h1 {
+        display: block;
+    }
+
+    .menu-text {
+        background-color: #004C97;
+        color: #fff;
+        border-bottom-right-radius: 40px;
+        padding: 3rem;
+        padding-top: 5rem;
+        margin-bottom: 3rem;
+    }
+
+    @media (max-width: 767px) {
+
+        .menu-page .container {
+            padding: 0;
+            margin: 0;
+        }
+        .user-instruct{
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .menu-text {
+            border-bottom-right-radius: 0px;
+            padding: 1.5rem 1.5rem 5rem;
+            margin-bottom: 0;
+           /*  font-size: 1.5;
+            font-family: 'Gotham Medium', Arial, sans-serif; */
+            position: relative;
+        }
+
+        [data-type="menu"] .menu-page .menu-content .topic-mnu li .menu-btn {
+            margin-bottom: 0px;
+        }
+    }
+
+    .unit {
+        padding-left: 3px;
+    }
+</style>
+
+
+<div class="menu-page">
+    <div class="container">
+        <!-- MOBILE ONLY - START -->
+        <div class="row full-device-height d-md-none">
+            <div class="col-12 col-md-4 pt-3">
+
+            </div>
+            
+            <div class="col-12 col-md-4 pt-3 user-instruct">
+                <div class="menu-text d-md-none">
+                    <p>This module will help you to understand customer misbehaviour and give you strategies to help get a customer on side.</p>
+                    <p><strong>Select</strong> the first topic to begin.</p>
+                    <div class="scroll-continue opacity-0">
+                        <button class="btn" data-navigate-anchor="main-menu^"><span class="sr-only">Continue</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MOBILE ONLY - END -->
+        <div class="row no-gutters">
+            <!-- DESKTOP ONLY - START -->
+            <div class="col-md-7">
+                <div class="menu-text d-none d-md-block">
+                    <p>This module will help you to understand customer misbehaviour and give you strategies to help get a customer on side.</p>
+                    <p><strong>Select</strong> the first topic to begin.</p>
+                </div>
+                <div class="menu-content">
+                    <div class="menu-holder">
+                        <a class="panel-anchor position-absolute" name="main-menu"></a>
+                        <ul class="topic-mnu d-flex flex-column" aria-label="Menu items" role="navigation">
+                            <!-- CONTENT WILL BE WRITEN HERE BY JAVASCRIPT -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(e) {
+        // position the scroll continue button
+        var $scrollbutton = $('.scroll-continue').eq(0);
+        var $viewport = Number(window.innerHeight);
+        var $height = Number($($scrollbutton).height());
+        var $max = $viewport - $height
+        var $pos = $($scrollbutton).offset().top;
+        if ($pos > $max) {
+            var $bottom = $max - $pos;
+            $scrollbutton.css('bottom', Math.abs($bottom));
+        }
+        $scrollbutton.removeClass('opacty-0');
+        //grab all topics from config file, then grab menu container
+        var topics = rebus.navigation.getModules()[0].topics,
+            _menu_container = $('.topic-mnu');
+
+        for (var i = 0; i < topics.length; i++) {
+            var _t = topics[i]
+            _icon = _t.icon,
+                duration = _t.duration < 60 ? rebus.utils.timeConverter(_t.duration).mins : rebus.utils.timeConverter(_t.duration).hours + ' ' + rebus.utils.timeConverter(_t.duration).mins
+            _enabled = !rebus.config.debug ? true : false;
+
+            _menu_container.append([
+                '<li class="topic-mnu-item topic ' + i + '">',
+                '<button class="menu-btn position-relative" data-navigate="topic ' + i + '" >',
+                '<div class="title"><span class="int">' + Number(i + 1) + '.</span> ' + _t.title + '<p class="duration">' + duration + '</p>' + '</div>',
+                '<div class="topic-status"><span class="sr-only">' + _t.title + '</span></div>',
+                '</button>',
+                '</li>'
+            ].join('\n'));
+
+        }
+
+        setTimeout(function() {
+            if ($(".complete").length) {
+                rebus.utils.scrollToAnchor("main-menu")
+            }
+        }, 500);
+    })
+</script>

@@ -1,0 +1,79 @@
+
+/********
+CORE
+*********/
+
+// Theme variables
+@import "variables";
+// Bootstrap Styles
+@import "bootstrap";
+
+// Other 3rd party libs
+@import "vendor/fface/fface";
+
+/*****
+BASE
+******/
+
+@import "global";
+@import "helper-classes"; // A lot of this can be generated
+@import "dropdown-menu";
+@import "menu";
+@import "header";
+@import "admin-log-console";
+@import "content"; // Contains code and button code I don't think gets used anymore
+@import "fonts";
+@import "icons";
+
+/*****
+LAYOUT
+******/
+
+@import "layout/panel";
+@import "layout/locked-panel";
+
+
+/*******
+ACTIVITY
+********/
+
+@import "activity/hotspots";
+@import "activity/accordion";
+@import "activity/flip-cards";
+@import "activity/multiple-choice";
+@import "activity/assessment"; // May be able to combine with components-quizzes above
+@import "activity/videos";
+@import "activity/click-btns";
+@import "activity/click-btns-tabbed";
+@import "activity/click-areas";
+@import "activity/match-btns";
+@import "activity/carousel";
+@import "activity/click-and-reveal";
+@import "activity/key-message";
+/********
+COMPONENT
+*********/
+@import "component/audio-control";
+@import "component/buttons";
+@import "component/card";
+
+@import "component/modal";
+@import "component/progress-modal";
+//@import "conponent/screen-reader" // For testing screenreader components, uncomment to use
+
+/****
+EXTRA
+*****/
+
+@import "extra/animations";
+@import "extra/iphone-styles"; // Height sizing to fit different iPhones
+@import "colours";
+
+
+/*********************
+THEME AND CUSTOM STUFF
+**********************/
+
+@import "theme";
+@import "custom"; // All the SCSS that is unique to the module
+@import "component/feedback";

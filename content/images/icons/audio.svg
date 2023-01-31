@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="-1 -1 32 32">
+    <circle cx="15" cy="15" r="15"  stroke-width="1" />
+    <path d="M5748.2,725.85v6.117l5.9,3.6V719.623l-5.9,4.13h-5.361v8.214h5.361" transform="translate(-5736.882 -712.448)" fill="none" />
+    <path d="M5781.467,734.68s3.795,2.565,0,5.78" transform="translate(-5761.777 -722.151)" fill="none" stroke-width="2"/>
+    <path d="M5783.838,726.746s8.311,5.379,0,11.219" transform="translate(-5763.305 -717.038)" fill="none" stroke-width="2"/>
+</svg>

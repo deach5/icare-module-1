@@ -1,0 +1,151 @@
+// Grid breakpoints and container widths
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 980px,
+  // xl: 980px
+);
+
+// Custom spacing
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 2),
+    5: ($spacer * 3)
+  ),
+  $spacers
+);
+
+// Colours
+
+$indigo:  #6A9CFF;
+$purple:  #6f42c1;
+$red:     #D61834;
+$orange:  #E6580F;
+$yellow:  #FFF100;
+$green:   #00962D;
+$cyan:    #00ADEE;
+$white:   #ffffff;
+
+$primary: #004C97;
+$blue:    #004C97;
+
+$secondary: #D0006F;
+$pink:    #D0006F;
+
+$tertiary: #702082;
+$purple:  #702082;
+
+
+$quaternary: #007B83;
+$teal:    #007B83;
+
+
+$light: #F5F5F5;
+$dark: #111111;
+
+$dark-grey: #3E3E3E;
+$medium-grey: #63636A;
+$light-grey: #909095;
+$lighton-grey: #BCBCBF;
+$lighter-grey: #D3D3D5;
+$lightest-grey: #F5F5F5;
+
+
+$header-height: 70px;
+
+$flipcard-border: $teal;
+$flipcard-color-back: $teal;
+
+/*  */
+
+
+
+
+
+/* FONT SIZING */
+
+$font-size-base:  1.125rem; // 18px in designs
+
+// heading sizes are proportional to font-size-base
+// see comment for calc based on vals from designs
+
+$h1-font-size: $font-size-base * 2.22; // 40px 
+$h2-font-size: $font-size-base * 1.66; // 24/18 = 1.3333333333
+$h2-font-weight: 400;
+
+$btn-font-size: $font-size-base * 1.222; // 22/18 = 1.2222222222 
+$btn-font-weight: bold;
+
+$mcq-font-size: $font-size-base;
+
+$key-msg-font-size: $font-size-base * 2; //1.78; // 36/18 = 1.7826086956521738
+$key-msg-byline-font-size: $font-size-base * 1.444;//1.78; // 26/18 = 1.444444444444
+
+$card-heading-font-size: $font-size-base * 1.333; // 24/18 = 1.3333333333
+$card-body-font-size: $font-size-base * 0.944; //1.78; // 17/18 = 0.9444444444
+
+
+
+
+/* THEMING OVERRIDES */
+$border-radius-small: 5px;
+$border-radius: 10px;
+$border-radius-large: 40px;
+$border-radius-extra-large: 60px;
+
+$drop-shadow: 3px 3px 6px rgba($secondary, .175);
+
+
+/* BUTTONS */
+
+
+$body-color: $dark;
+$masthead-bg: #fff;
+$dropdown-bg: #F5F5F5;
+$dropdown-color: #111111;
+
+
+
+
+$mcq-bg: transparent;
+$mcq-color: $dark;
+$mcq-border-color: $quaternary;
+$mcq-solid-bg: white;
+$mcq-solid-color: #000;
+$mcq-solid-active-bg: $primary;
+$mcq-solid-active-color: white;
+$mcq-solid-grid-bg: white;
+$mcq-icon-fill: red;
+$mcq-panel-light: #F7F7F7;
+$mcq-panel-dark: $secondary;
+
+
+
+$headings-font-weight: 600;
+$headings-color: $primary;
+
+
+// fams
+$font-family-sans-serif:  'Gotham', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-family: 'Sauna-Bold', Arial, Helvetica, sans-serif;   
+
+//Numbers (for auto class names)
+$number-of-modules: 20;
+$max-number-of-topics: 20;
+
+
+

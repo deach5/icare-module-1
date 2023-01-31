@@ -1,0 +1,146 @@
+/* modal window fix for iOS running in the SF app */
+.iOS.isApp .modal {
+    height: 470px; /* Set a default max height of the modal (adjusted later)*/
+    position: fixed; /* Display modal in the centre of your screen */
+    overflow-y: scroll; /*  Ensure that the modal is scroll-able */
+    -webkit-overflow-scrolling: touch; /* Avoid having to use 2 finger scroll on iOS    */
+}
+.iOS.isApp .modal.fade.in{
+    top: -48px; /* Use more screen real estate - body padding = 60px */
+}
+.iOS.isApp .modal-body{
+/* Increase the max height of the modal body to try & avoid both it,
+* and the modal container having scroll bars which results in odd behavior */ 
+max-height: 2400px; 
+}  
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait */
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    .iOS.isApp .modal{ height: 546px}
+}
+/* Landscape */
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    .iOS.isApp .modal{ height: 298px}
+}
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Portrait */
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) { 
+    .iOS.isApp .modal{ height: 645px}
+}
+/* Landscape */
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) { 
+    .iOS.isApp .modal{ height: 353px}
+}
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Portrait */
+@media only screen 
+and (min-device-width: 414px) 
+and (max-device-width: 736px) 
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) { 
+    .iOS.isApp .modal{ height: 714px}
+}
+/* Landscape */
+@media only screen 
+and (min-device-width: 414px) 
+and (max-device-width: 736px) 
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) { 
+    .iOS.isApp .modal{ height: 392px}
+}
+/* ----------- iPhone X ----------- */
+/* Portrait */
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 812px) 
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) { 
+    .iOS.isApp .modal{ height: 790px}
+}
+
+/* Landscape */
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 812px) 
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) { 
+    .iOS.isApp .modal{ height: 353px}
+}
+/* ----------- iPad 1, 2, Mini and Air, 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: portrait)  {
+    .iOS.isApp .modal{ height: 1002px}
+}
+/* Landscape */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape)  {
+    .iOS.isApp .modal{ height: 746px}
+}
+/* ----------- iPad Pro 10.5" ----------- */
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+and (min-device-width: 834px) 
+and (max-device-width: 834px) 
+and (orientation: portrait) 
+and (-webkit-min-device-pixel-ratio: 2) {
+    .iOS.isApp .modal{ height: 1090px}
+}
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+and (min-device-width: 1112px) 
+and (max-device-width: 1112px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 2) {
+    .iOS.isApp .modal{ height: 812px}
+}
+/* ----------- iPad Pro 12.9" ----------- */
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+and (min-device-width: 1024px) 
+and (max-device-width: 1024px) 
+and (orientation: portrait) 
+and (-webkit-min-device-pixel-ratio: 2) {
+    .iOS.isApp .modal{ height: 1344px}
+}
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+and (min-device-width: 1366px) 
+and (max-device-width: 1366px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 2) {
+    .iOS.isApp .modal{ height: 1002px}
+}
+.iOS.isApp .modal-backdrop.in{
+    opacity:.9;
+}

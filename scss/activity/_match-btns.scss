@@ -1,0 +1,24 @@
+/*
+Match Buttons
+*/
+
+[data-activity="match-btns"] {
+    .txt-answer, 
+    .done-indicator {
+        display: none;
+    }
+
+    .item-done {
+        .txt-answer {
+            display: inline;
+        }
+
+        img.done-indicator {
+            display: block;
+        }
+    }
+
+    img.done-indicator {
+        position: absolute;
+    }
+}

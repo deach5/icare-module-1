@@ -1,0 +1,105 @@
+<style>
+    #landing.panel {
+        padding-top: 0rem;
+    }
+
+    #landing svg.min-ham {
+        display: inline;
+        width: 1rem;
+        height: 1rem;
+
+    }
+
+    h2 {
+        padding-top: 20px;
+    }
+
+    .sm-purple {
+        border-bottom: 5px solid #702082;
+    }
+
+    .example {
+        transform-origin: top left;
+        transform: scale(.7);
+        pointer-events: none;
+    }
+
+    @media (max-width: 767.9px) {
+        .sm-purple {
+            border-bottom: 5px solid #702082;
+        }
+
+        .example {
+            transform: none;
+            pointer-events: none;
+            transform: scale(.7);
+        }
+    }
+
+    .temp-audio {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        fill: #004C97;
+        stroke: #fff;
+
+    }
+</style>
+
+<header class="py-3">
+    <div class="container">
+        <h1>All you need to know</h1>
+    </div>
+</header>
+
+<div class="horizontal-panels">
+    <section class="section panel pb-0" id="landing">
+        <div class="container">
+            <div class="row sm-purple">
+                <div class="col-md-9">
+                    <h2>Home screen</h2>
+                    <p>Select the icare logo to return to the home screen at any time.</p>
+                </div>
+            </div>
+            <div class="row sm-purple">
+                <div class="col-md-9">
+                    <h2>Audio</h2>
+                    <p>There are activities that include audio. Have headphones ready if you’re not in a quiet place.</p>
+                    <p><strong>Select</strong>
+                        <svg class="temp-audio" focusable="false" role="presentation" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+                            <use href="content/images/icons.svg#icon-audio" xlink:href="content/images/icons.svg#icon-audio"></use>
+                        </svg><span class="sr-only"> the toggle audio button</span> to test your audio now.
+                    </p>
+                    <div class="audio-control on-light" data-audio-file="AUDIO_PLACEHOLDER"></div>
+                </div>
+            </div>
+            <div class="row sm-purple">
+                <div class="col-md-9">
+                    <h2>Navigation</h2>
+                    <p>This is a vertical scrolling screen course. Navigate through the module by scrolling and selecting buttons, such as:</p>
+                    <p><button class="btn btn-primary pink example"><span> <span class="sr-only">Example button</span> Continue button</span></button></p>
+                </div>
+            </div>
+            <div class="row sm-purple">
+                <div class="col-md-9">
+                    <h2>Activity</h2>
+                    <p>All activities need to be completed before you can continue scrolling. Do this by completing free text fields and selecting buttons.</p>
+                </div>
+            </div>
+            <div class="row sm-purple">
+                <div class="col-md-9">
+                    <h2>Duration</h2>
+                    <p>This module should take about <strong>24 minutes</strong>.</p>
+                    <p>You’ll need to complete the module in one sitting to allow you to save and download your activities at the end.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <p class="mt-4">When you’re ready, <strong>select</strong> the button below.</p>
+                    <p><button type="button" class="btn btn-primary pink btn-big mb-5" data-mark-page-as-complete-and-continue><span>I’m ready! </span></button></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

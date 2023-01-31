@@ -1,0 +1,132 @@
+/*
+Click Areas
+*/
+
+/* If highlights are shown, we show the pointer cursor on an area; if not, we show it for the whole area. We can't set to the default cursor because
+it won't override in IE */
+.click-areas-container {
+    position: relative;
+    background-size: 100% 100%;
+    cursor: pointer;
+
+    &.show-click-areas {
+        cursor: default;
+
+        area {
+            cursor: pointer;
+        }
+    }
+}
+
+.click-area-once {
+    &.activity-done .click-areas-container, area {
+        cursor: default !important;
+    }
+}
+
+.click-areas-img {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.click-areas-container {
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke-width: 1;
+    }
+
+    .done-indicator {
+        position: absolute;
+    }
+}
+
+.click-area-highlight {
+    display: none;
+    stroke: #00f;
+}
+
+.show-click-areas .click-area-highlight {
+    display: inline;
+}
+
+.animate-click-areas .click-area-highlight {
+    -moz-animation: animate-click-areas-highlights 1s ease-in-out alternate infinite;
+    -webkit-animation: animate-click-areas-highlights 1s ease-in-out alternate infinite;
+    animation: animate-click-areas-highlights 1s ease-in-out alternate infinite;
+}
+
+.click-area-focus {
+    display: none;
+    stroke: #f00;
+    stroke-width: 3;
+}
+
+.keyboard-nav .click-area-focus.active {
+    display: inline;
+}
+
+.click-areas-modal.complete {
+    .modal-footer {
+        border-top: none;
+    }
+
+    .modal-content {
+        background-color: #A8CB6C;
+    }
+}
+
+@-ms-keyframes animate-click-areas-highlights {
+    0% {
+        stroke-opacity: 0;
+        stroke-width: 1;
+    }
+
+    100% {
+        stroke-opacity: 1;
+        stroke-width: 2;
+    }
+}
+
+@-moz-keyframes animate-click-areas-highlights {
+    0% {
+        stroke-opacity: 0;
+        stroke-width: 1;
+    }
+
+    100% {
+        stroke-opacity: 1;
+        stroke-width: 2;
+    }
+}
+
+@-webkit-keyframes animate-click-areas-highlights {
+    0% {
+        stroke-opacity: 0;
+        stroke-width: 1;
+    }
+
+    100% {
+        stroke-opacity: 1;
+        stroke-width: 2;
+    }
+}
+
+@keyframes animate-click-areas-highlights {
+    0% {
+        stroke-opacity: 0;
+        stroke-width: 1;
+    }
+
+    100% {
+        stroke-opacity: 1;
+        stroke-width: 2;
+    }
+}

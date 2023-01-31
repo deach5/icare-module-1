@@ -1,0 +1,129 @@
+.accordion {
+
+    margin: 1rem auto;
+    width: 100%;
+
+    .card {              
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        background-color:transparent;
+        border: 0;
+        border-radius: 0;
+        margin-bottom: 10px;;
+
+        .card-header {
+            border: 0;
+            position: relative;
+            margin: 0;
+            transition: color 0.2s;
+            padding: 0;            
+            
+
+            button {
+                background: $white;   
+                color: $dark;     
+                font-size: 18px;        
+                border: 0;                                
+                padding: 20px 40px 20px 20px;
+                width: 100%;              
+                background-repeat: no-repeat;
+                background-position: right 20px center;
+                box-shadow: none;
+                border-radius: 0;
+                display: flex;
+                flex-direction: column;               
+                justify-content: center;
+                align-items: flex-start;
+                font-family: "Gotham-Black"; 
+                text-align: left;
+                font-weight: normal;
+                @media (max-width: 576px) {    
+                    font-size: 18px;
+                }
+                 
+                
+
+                &[aria-expanded="false"]{
+                    
+                    background-image: url("../content/images/icons/accordion-arrow-collapsed.svg");
+                    &:hover,
+                    &:focus {
+                        opacity: .8;
+                        background-image: url("../content/images/icons/accordion-arrow-collapsed-hover.svg");
+
+                    }
+                }
+                &[aria-expanded="true"]{
+                    background-color: $pink;   
+                    color: white;
+                    background-image: url("../content/images/icons/accordion-arrow-expanded.svg");
+                    &:hover,
+                    &:focus {
+                        background-color: #E0499A;
+                        background-image: url("../content/images/icons/accordion-arrow-expanded-hover.svg");
+
+                    }
+                }
+
+            }
+
+            &:not(.item-done) {             
+                .done-indicator {
+                    display: none;
+                }
+        }
+
+            &.item-done{
+
+                h3{
+                
+                } 
+
+
+                button{   
+                    &[aria-expanded="false"]{   
+                    background-image: url("../content/images/icons/accordion-tick-expanded.svg") !important; 
+                    }
+
+                                  
+                   &[aria-expanded="false"]{     
+                    
+                    background-image: url("../content/images/icons/accordion-tick.svg") !important; 
+                        &:hover,
+                        &:focus {                       
+
+                        }
+                    }
+                }
+                
+            }
+
+        }
+
+        .card-body {
+
+            background-color: #fff;
+            
+            border: 0;         
+            padding: 1.25rem 2rem;
+            margin-top: -1px;
+            h3{
+                font-size: 1.8rem;
+                padding-bottom: 1rem;
+            }
+        }
+
+
+    }
+
+    &.reduced-padding {
+        .card-body {
+            >div {
+                @media (min-width: 768px) {
+                    padding: 22px 0px 22px 22px;
+                }
+            }
+        }
+    }
+}

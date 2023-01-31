@@ -1,0 +1,688 @@
+
+<style type="text/css">
+</style>
+
+<div class="horizontal-panels">
+
+<section class="panel bg-white">
+    <div class="container">
+        <h2 class="strip-header">Topic 1 Title</h2>
+        <div class="audio-control on-light" data-audio-file="AUDIO_PLACEHOLDER"></div>
+    </div>
+</section>
+<!-- KEY MESSAGE - START -->
+<section class="panel key-message" data-activity="key-message">
+    <div class="key-message-interaction d-flex justify-content-center">
+        <button class="key-message-trigger d-flex" data-trigger-key-message>
+            <svg class="align-self-center justify-self-center" focusable="false" role="img" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 33.433 26.395">
+                <use href="content/images/icons.svg#icon-envelope" xlink:href="content/images/icons.svg#icon-envelope" />
+            </svg>
+        </button>
+    </div>
+    <div class="key-message-container"  data-animation="animate__flipInY animate__animated animate__delay-1s">
+        <div class="container">
+            <blockquote>Alcohol and drugs affect our performance, even if we don’t realise it.</blockquote>
+        </div>
+    </div>
+</section>
+<!-- KEY MESSAGE - END -->
+<section class="panel bg-blue">
+    <div class="container">
+        <h2>Heading</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </div>
+</section>
+
+<section class="panel bg-grey">
+    <div class="container">
+        <h2>Blocking activity</h2>
+        <div class="audio-control on-light" data-audio-file="AUDIO_PLACEHOLDER"></div>
+        <p>Please complete this activity before continuing.</p>
+        <form class="click-btns" data-activity="click-btns" data-mandatory="true">
+            <div>
+                <button class="btn btn-primary click-btn" type="button">Click me!</button>
+                <div class="modal">
+                    <h3>🍾 Congrats! 🎉</h3>
+                    <p>You did it!</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+ <!-- ACTIVITY:video -->
+ <section class="panel">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div data-activity="video" data-mandatory="true">
+                    <video preload="metadata" controls>
+                        <source src="./content/video/FilmLeaderCountdown.mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- ACTIVITY: flip card container -->
+ <section class="panel">
+    <div class="container">
+        <div class="audio-control on-light" data-audio-file="AUDIO_PLACEHOLDER"></div>
+        <h3>{flipcards}</h3>
+        <p><strong class="action">Select</strong> each card to learn more.</p>
+        <ul data-activity="flip-cards" data-mandatory="true">
+            <li>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <p>{front}</p>
+                </div>
+                <div class="d-flex flex-column justify-content-center">
+                    <p>{back}</p>
+                </div>
+            </li>
+            <li>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <p>{front}</p>
+                </div>
+                <div class="d-flex flex-column justify-content-center">
+                    <p>{back}</p>
+                </div>
+            </li>
+            <li>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <p>{front}</p>
+                </div>
+                <div class="d-flex flex-column justify-content-center">
+                    <p>{back}</p>
+                </div>
+            </li>
+            <li>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <p>{front}</p>
+                </div>
+                <div class="d-flex flex-column justify-content-center">
+                    <p>{back}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- ACTIVITY: multiple choice quiz container -->
+<section class="panel" data-manual-scroll-when-done="true">
+    <img class="d-block d-sm-none w-100" src="content/images/bgs/placeholder.png" alt="">
+    <div class="container">
+        <h3 class="text-primary">{multiple-choice-quiz}</h3>
+        <div class="audio-control on-light" data-audio-file="AUDIO_PLACEHOLDER"></div>
+        <p>{question setup}</p>
+        <form class="multiple-choice-quiz" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="partial"  data-submit="Submit">
+            <div class="row">
+                <div class="col-12 pt-5">
+                    <p>{questions}</p>
+                    <p><strong class="action">Select</strong> the best answer, then <strong class="action">Select</strong> Submit.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="multiple-choice-quiz-options">
+                        <li>{incorrect option}</li>
+                        <li>{incorrect option}</li>
+                        <li data-required="true">{correct option}</li>
+                        <li>{incorrect option}</li>
+                        <li>{incorrect option}</li>
+                    </ul>
+                    <div data-response="correct">
+                        <p><strong>{correct}</strong></p>
+                        <div class="audio-control on-light" data-audio-file="AUDIO_PLACEHOLDER"></div>
+                        <p>{feedback}</p>
+                    </div>
+                    <div data-response="incorrect">
+                        <p><strong>{incorrect}</strong></p>
+                        <div class="audio-control on-light" data-audio-file="AUDIO_PLACEHOLDER"></div>
+                        <p>{feedback}</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 response-container">
+                    <!-- WILL BE POPULATED BY FEEDBACKS ABOVE AFTER INIT IS RUN THEN SUBMIT -->
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="panel">
+    <!-- ACTIVITY: accordion container -->
+    <div data-activity="accordion" data-mandatory="true" class="accordion reduced-padding" id="informal-and-formal">
+        <div class="card" role="tab">
+            <h2 class="card-header">
+                <button class="btn btn-link btn-block text-left" type="button">
+                    <span>Informal risk assessment</span>
+                </button>
+            </h2>
+            <div>
+                <div class="card-body">
+                    <div>
+                        <p><strong>Informal risk assessment</strong></p>
+                    <ul>
+                        <li>Appropriate for low level risks or known risks with established and accepted control measures.</li>
+                        <li>Can be done in your head or as part of a conversation.</li>
+                        <li>May not always be documented.</li>
+                        <li>Address the hazard or risk by immediately taking action.</li>
+                        <li>Encourages us to Pause, Breathe and RESET and take time to stop, think, and consider the situation before acting.</li>
+                        <li>Go-See walks.</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" role="tab">
+            <h2 class="card-header">
+                <button class="btn btn-link btn-block text-left" type="button">
+                    <span>Formal risk assessment</span>                 
+                </button>
+            </h2>
+            <div>
+                <div class="card-body">
+                    <div>
+                        <p><strong>Formal risk assessment</strong></p>
+                    <ul>
+                        <li>Required when a hazard or risk is more complex or does not have established and accepted control measures that can eliminate the hazard.</li>
+                        <li>Risk assessment tools and templates are available to help site managers assess specific risks such as manual tasks and Floor Traffic Management Plans.</li>
+                        <li>Complex risk assessments must be led by a suitably capable AP employee or delegate, such as a safety specialist.</li>
+                        <li>Must be documented.</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="panel">
+    <div data-activity="slider" data-mandatory="partial" data-required="left|right">
+        <!-- <div class="question">
+            <p class="lms-question-text">...</p>
+        </div>
+        <div id="image-and-slider-container">
+            <div class="img-container">
+                <div class="point-img">...</div>
+                <div class="point-img">...</div>
+            </div>
+            <div class="text-container">
+                <div class="point-text">...</div>
+                <div class="point-text">...</div>
+            </div>
+            <div class="activity-container"></div>
+        </div> -->
+        <p>
+            <label for="amount">Donation amount ($50 increments):</label>
+            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+        </p>
+        <div class="activity-container"></div>
+    </div>
+</section>
+
+<!-- ACTIVITY: carousel container -->
+<section class="panel">
+    <div class="container">
+        <h2 class="h1">Our carousel</h2>
+        <div class="audio-control on-light" data-audio-file="AUDIO_PLACEHOLDER"></div>
+        <p>Let’s learn more about carousels.</p>
+        <div data-touch="true" data-ride="carousel" data-activity="carousel" class="carousel slide" id="carousel-1" data-interval="false"
+            data-mandatory="true">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row no-gutters">
+                        <div class="col-sm-6 bg-secondary text-white p-4">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga labore quia repudiandae, reiciendis laudantium quo delectus nisi enim ex. Debitis, ipsum! Soluta optio quia reprehenderit ut tenetur enim ratione mollitia.</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="w-100" src="content/images/bgs/placeholder.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row no-gutters">
+                        <div class="col-sm-6 bg-secondary text-white p-4">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam iure maxime a natus
+                                dolorum, iusto quibusdam porro, in quae perspiciatis dignissimos eos similique autem
+                                accusantium suscipit inventore quas cupiditate error.</p>
+                            <p>Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Eveniet perspiciatis
+                                quibusdam blanditiis reiciendis laborum ullam, aperiam dolores doloremque fugit iure
+                                beatae adipisci vero, vitae soluta, perferendis labore natus magnam aut.</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <svg class="w-100 px-4 py-5" focusable="false" role="presentation" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 448.244 298.352">
+                                <use href="content/images/icons.svg#icon-world-map"
+                                    xlink:href="content/images/icons.svg#icon-world-map" /></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row no-gutters">
+                        <div class="col-sm-6 bg-secondary text-white p-4">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, recusandae. Obcaecati,
+                                corporis necessitatibus accusantium iusto reprehenderit, minima. Iste ab fugit earum
+                                praesentium possimus placeat modi animi ut sint, repellendus accusamus!</p>
+                            <ul>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="w-100" src="content/images/bgs/placeholder.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls outer-nav d-flex justify-content-between">
+                <a class="btn btn-primary" href="#carousel-1" role="button" data-slide="prev">Previous</a>
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-1" data-slide-to="1"></li>
+                    <li data-target="#carousel-1" data-slide-to="2"></li>
+                </ol>
+                <a class="btn btn-primary" href="#carousel-1" role="button" data-slide="next">Next</a>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- CARDS -->
+    <section class="panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img class="card-img-top" src="content/images/bgs/placeholder.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <h5 class="card-title card-top">Card title</h5>
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <h5 class="card-title card-top">Card title</h5>
+                        <img class="card-img-left" src="content/images/bgs/placeholder.png" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="audio-control mb-3" data-audio-file="AUDIO_PLACEHOLDER"></div>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="section panel">
+    <div class="container">
+        <h3>Test entry and save</h3>
+        <form onsubmit="return false;" class="input-quiz" data-activity="input-quiz" data-mandatory="true" data-show-answer="true">
+            <textarea class="input-quiz-textarea" data-idx="t3s2_p6" maxlength="120" rows="4"></textarea>
+            <ul class="input-quiz-options">
+                <li>Yes</li>
+                <li data-required="true">No</li>
+            </ul>
+        </form>
+    </div>
+</section>
+
+<section class="panel bg-white">
+    <div class="container">
+        <div class="audio-control on-light" data-audio-file="AUDIO_PLACEHOLDER"></div>
+        <h2>That is all</h2>
+        <p>The next topic will assess your knowledge of assessments.</p>
+        <p><strong>Select</strong> the button to continue</p>
+        <button type="button" data-complete="page" data-navigate="next" class="btn btn-primary mt-3 btn-lg"><span>Let’s continue</span></button>
+    </div>
+</section>
+    <!-- PANEL 06 - Knowledge Checkpoint -->
+    <section class="panel" data-manual-scroll-when-done="true">
+        <div class="container" data-question-pools data-attempt="1">
+            <!-- POOL - START -->
+            <!-- Q1 - START -->
+            <form class="multiple-choice-quiz" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="true"  data-submit="Submit" data-show-answer="false">
+                    <div class="row p-0 d-flex align-items-stretch justify-content-start flex-nowrap" data-horz-slide-wrap>
+                        <div class="col-12" data-horz-slide>
+                            <h2>Knowledge Checkpoint</h2>
+                            <p>Answer the Knowledge Check below to see if you’ve understood the importance of having an Alcohol and Other Drugs Policy here at Australia Post.</p>
+                            <div class="question">
+                                <p>Why do we have a policy about Alcohol and Other Drugs?</p>
+                            </div>
+                        </div>
+                        <div class="col-12" data-horz-slide>
+                            <ul class="multiple-choice-quiz-options">
+                                <li>Because all big organisations do</li>
+                                <li data-required="true">To keep everyone safe</li>
+                                <li>We’re required to by law</li>
+                            </ul>
+                            <div data-response="correct">
+                                <svg aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-correct" xlink:href="content/images/icons.svg#icon-correct" /></svg>
+                                <h3>That's correct</h3>
+                                <p>You’ve got it! Let’s keep going.</p>
+                            </div>
+                            <div data-response="incorrect">
+                                <svg aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-incorrect" xlink:href="content/images/icons.svg#icon-incorrect" /></svg>
+                                <h3>That's not quite right</h3>
+                                <p>The main and most important reason we have a policy on Alcohol and Other Drugs is to keep everyone safe. Please try again.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 response-container" data-horz-slide><!-- dynamic --></div>
+                    </div>
+                    <div class="question-footer row">
+                        <div class="question-step d-flex justify-content-center col-12">
+                            <div data-active="true"></div>
+                            <div data-active="false"></div>
+                            <div data-active="false"></div>
+                        </div>
+                        <div class="question-navigation d-flex col-12">
+                            <button class="btn btn-primary mr-auto" data-qestion-nav="back"><svg class="flip chevron" aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-chevron" xlink:href="content/images/icons.svg#icon-chevron" /></svg><span class="sr-only">Back</span></button>
+                            <button class="btn btn-primary ml-auto" data-qestion-nav="next">Continue<svg class="chevron ml-4" aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-chevron" xlink:href="content/images/icons.svg#icon-chevron" /></svg></button>
+                            <button class="btn btn-primary btn-check-multi-choice-answers ml-auto" disabled data-question-submit>Submit</button>
+                            <button class="btn btn-primary mx-auto" data-question-tryagain>Try again</button>
+                            <!-- button class="btn btn-primary mx-auto" data-question-continue>Continue</button -->
+                            <button class="btn btn-primary mx-auto" data-question-reviewtopic>Review topic</button>
+                        </div>
+                    </div>
+            </form>
+            <!-- Q1 - END -->
+            <!-- Q2 - START -->
+            <form class="multiple-choice-quiz opacity-0" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="true"  data-submit="Submit" data-show-answer="false" hidden>
+                <div class="row p-0  d-flex align-items-stretch justify-content-start flex-nowrap" data-horz-slide-wrap>
+                    <div class="col-12" data-horz-slide>
+                        <h2>Knowledge Checkpoint</h2>
+                        <p>Answer the Knowledge Check below to see if you’ve understood the importance of having an Alcohol and Other Drugs Policy here at Australia Post.</p>
+                        <div class="question">
+                            <p>Who is protected by our AOD Policy?</p>
+                        </div>
+                    </div>
+                    <div class="col-12" data-horz-slide>
+                        <ul class="multiple-choice-quiz-options">
+                            <li>Australia Post workers</li>
+                            <li>The people we interact with as part of our work</li>
+                            <li data-required="true">Everyone</li>
+                        </ul>
+                        <div data-response="correct">
+                            <svg aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-correct" xlink:href="content/images/icons.svg#icon-correct" /></svg>
+                            <h3>That's correct</h3>
+                            <p>You’ve got it! Let’s keep going.</p>
+                        </div>
+                        <div data-response="incorrect">
+                            <svg aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-incorrect" xlink:href="content/images/icons.svg#icon-incorrect" /></svg>
+                            <h3>That's not quite right</h3>
+                            <p>Our Alcohol and Other Drugs Policy keeps everyone safe. Please try again.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 response-container" data-horz-slide><!-- dynamic --></div>
+                </div>
+                <div class="question-footer row">
+                    <div class="question-step d-flex justify-content-center col-12">
+                        <div data-active="true"></div>
+                        <div data-active="false"></div>
+                        <div data-active="false"></div>
+                    </div>
+                    <div class="question-navigation d-flex col-12">
+                        <button class="btn btn-primary mr-auto" data-qestion-nav="back"><svg class="flip chevron" aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-chevron" xlink:href="content/images/icons.svg#icon-chevron" /></svg><span class="sr-only">Back</span></button>
+                        <button class="btn btn-primary ml-auto" data-qestion-nav="next">Continue<svg class="chevron ml-4" aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-chevron" xlink:href="content/images/icons.svg#icon-chevron" /></svg></button>
+                        <button class="btn btn-primary btn-check-multi-choice-answers ml-auto" disabled data-question-submit>Submit</button>
+                        <button class="btn btn-primary mx-auto" data-question-tryagain>Try again</button>
+                        <!-- button class="btn btn-primary mx-auto" data-question-continue>Continue</button -->
+                            <button class="btn btn-primary mx-auto" data-question-reviewtopic>Review topic</button>
+                    </div>
+                </div>
+            </form>
+            <!-- Q2 - END -->
+            <!-- Q3 - START -->
+            <form class="multiple-choice-quiz opacity-0" data-activity="multiple-choice-quiz" data-type="radio" data-mandatory="true"  data-submit="Submit" data-show-answer="false" hidden>
+                <div class="row p-0 d-flex align-items-stretch justify-content-start flex-nowrap" data-horz-slide-wrap>
+                    <div class="col-12" data-horz-slide>
+                        <h2>Knowledge Checkpoint</h2>
+                        <p>Answer the Knowledge Check below to see if you’ve understood the importance of having an Alcohol and Other Drugs Policy here at Australia Post.</p>
+                        <div class="question">
+                            <p>What is an effective way to keep people safe when it comes to AOD?</p>
+                        </div>
+                    </div>
+                    <div class="col-12" data-horz-slide>
+                        <ul class="multiple-choice-quiz-options">
+                            <li>Expensive penalties for disobeying the rules </li>
+                            <li data-required="true">Having and enforcing a clear policy on AOD</li>
+                            <li>Banning all alcohol and drug consumption </li>
+                        </ul>
+                        <div data-response="correct">
+                            <svg aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-correct" xlink:href="content/images/icons.svg#icon-correct" /></svg>
+                            <h3>That's correct</h3>
+                            <p>You’ve got it! Let’s keep going.</p>
+                        </div>
+                        <div data-response="incorrect">
+                            <svg aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-incorrect" xlink:href="content/images/icons.svg#icon-incorrect" /></svg>
+                            <h3>That's not quite right</h3>
+                            <p>The most effective thing we can do is to have and enforce a clear policy on Alcohol and Other Drugs.</p>
+                            <p>Please review this topic and reattempt this Knowledge Checkpoint when you’re ready.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 response-container" data-horz-slide><!-- dynamic --></div>
+                </div>
+                <div class="question-footer row">
+                    <div class="question-step d-flex justify-content-center col-12">
+                        <div data-active="true"></div>
+                        <div data-active="false"></div>
+                        <div data-active="false"></div>
+                    </div>
+                    <div class="question-navigation d-flex col-12">
+                        <button class="btn btn-primary mr-auto" data-qestion-nav="back"><svg class="flip chevron" aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-chevron" xlink:href="content/images/icons.svg#icon-chevron" /></svg><span class="sr-only">Back</span></button>
+                        <button class="btn btn-primary ml-auto" data-qestion-nav="next">Continue<svg class="chevron ml-4" aria-hidden="true" focusable="false" role="presentation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="content/images/icons.svg#icon-chevron" xlink:href="content/images/icons.svg#icon-chevron" /></svg></button>
+                        <button class="btn btn-primary btn-check-multi-choice-answers ml-auto" disabled data-question-submit>Submit</button>
+                        <button class="btn btn-primary mx-auto" data-question-tryagain>Try again</button>
+                        <!-- button class="btn btn-primary mx-auto" data-question-continue>Continue</button -->
+                            <button class="btn btn-primary mx-auto" data-question-reviewtopic>Review topic</button>
+                    </div>
+                </div>
+            </form>
+            <!-- Q3 - END -->
+            <!-- POOL - END -->
+        </div>
+    </section>
+
+<style>
+    /* Component containers
+----------------------------------*/
+.ui-widget {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 1em;
+}
+.ui-widget .ui-widget {
+	font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 1em;
+}
+.ui-widget.ui-widget-content {
+	border: 1px solid #c5c5c5;
+}
+.ui-widget-content {
+	border: 1px solid #dddddd;
+	background: #ffffff;
+	color: #333333;
+}
+.ui-widget-content a {
+	color: #333333;
+}
+.ui-widget-header {
+	border: 1px solid #dddddd;
+	background: #e9e9e9;
+	color: #333333;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #333333;
+}
+.ui-slider {
+	position: relative;
+	text-align: left;
+}
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 1.2em;
+	height: 1.2em;
+	cursor: pointer;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+}
+
+/* support: IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+	filter: inherit;
+}
+
+.ui-slider-horizontal {
+	height: .8em;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	top: -.3em;
+	margin-left: -.6em;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+	left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
+
+.ui-slider-vertical {
+	width: .8em;
+	height: 100px;
+}
+.ui-slider-vertical .ui-slider-handle {
+	left: -.3em;
+	margin-left: 0;
+	margin-bottom: -.6em;
+}
+.ui-slider-vertical .ui-slider-range {
+	left: 0;
+	width: 100%;
+}
+.ui-slider-vertical .ui-slider-range-min {
+	bottom: 0;
+}
+.ui-slider-vertical .ui-slider-range-max {
+	top: 0;
+}
+    /* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+
+/* We use html here because we need a greater specificity to make sure disabled
+works properly when clicked or hovered */
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+	border: 1px solid #c5c5c5;
+	background: #f6f6f6;
+	font-weight: normal;
+	color: #454545;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited,
+a.ui-button,
+a:link.ui-button,
+a:visited.ui-button,
+.ui-button {
+	color: #454545;
+	text-decoration: none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+	border: 1px solid #cccccc;
+	background: #ededed;
+	font-weight: normal;
+	color: #2b2b2b;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited,
+a.ui-button:hover,
+a.ui-button:focus {
+	color: #2b2b2b;
+	text-decoration: none;
+}
+
+.ui-visual-focus {
+	box-shadow: 0 0 3px 1px rgb(94, 158, 214);
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: 1px solid #003eff;
+	background: #007fff;
+	font-weight: normal;
+	color: #ffffff;
+}
+.ui-icon-background,
+.ui-state-active .ui-icon-background {
+	border: #003eff;
+	background-color: #ffffff;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+</style>

@@ -1,0 +1,167 @@
+/*
+    Audio Control
+*/
+
+.audio-control {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: .8em 0;
+    max-width: 250px;
+    align-self: stretch;
+
+    &.d-block mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .audio-btn {
+        display: block;
+        height: 32px;
+        width: 32px;
+        margin:0 10px 0 0;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    > div {
+        flex: 1;
+        position: relative;
+        height: 6px;
+        background: $primary;
+    }
+
+    .bg-primary &,
+    .bg-shade-2 & {
+        > div {
+            background: #fff;
+        }
+    }
+
+    > div > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $light;
+        transform: scaleX(0);
+        transform-origin: top left;
+    }
+
+    .bg-primary & {
+        > div > div {
+            background: $primary;
+        }
+    }
+
+    .audio-btn {
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            fill: $primary;
+            stroke: #fff;
+        }
+        &:hover svg {
+            fill: #fff;
+            stroke: $primary;
+        }
+    }
+
+    .bg-primary & {
+        .audio-btn {
+            svg {
+                fill: #fff;
+                stroke: $primary;
+            }
+            &:hover {
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                }
+                svg {
+                    fill: $primary;
+                    stroke: #fff;
+                }
+            }
+        }
+    }
+     
+    .bg-white & {
+        .audio-btn {
+            &:hover {
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border: 2px solid $primary;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    &.basic {
+        width: 83px;
+        height: 73px;
+        padding: 0;
+    }
+}
+
+#audio-buffering-spinner {
+    margin: 8px 0 0 20px;
+}
+
+.show-when-audio-buffering {
+    span {
+        position: relative;
+        top: 5px;
+        display: inline-block;
+        color: #fff;
+        margin-left: 5px;
+    }
+
+    display: none !important;
+}
+
+.audio-buffering {
+    .show-when-audio-buffering {
+        display: block !important;
+    }
+
+    .hide-when-audio-buffering {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .audio-control {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .audio-control.outset {
+        left: -60px;
+    }
+}
+
+@media (min-width: 992px) {
+    .audio-control.outset-md {
+        left: -60px;
+    }
+}

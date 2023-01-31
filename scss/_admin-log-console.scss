@@ -1,0 +1,106 @@
+/**************************************************************************************************************************
+ADMIN/LOG/CONSOLE
+***************************************************************************************************************************/
+
+.admin-only-list-item, 
+.debug-only-list-item {
+    display: none !important;
+}
+
+.admin-enabled .admin-only-list-item, 
+.debug-enabled .debug-only-list-item {
+    display: list-item !important;
+}
+
+.admin-enabled header.masthead {
+    background-color: red !important;
+}
+
+#emergency-log {
+    display: none;
+    padding: 10px;
+}
+
+.admin-enabled #emergency-log.show-log {
+    display: block;
+}
+
+.log {
+    div, 
+    span {
+        font-family: $font-family-monospace;
+        font-size: 14px;
+        font-size: 1.4rem;
+    }
+
+    .line {
+        margin-top: 5px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .expandable {
+        margin-left: 25px;
+    }
+
+    .key {
+        color: #8a1793;
+    }
+
+    .value {
+        color: #c41a16;
+    }
+
+    .serialization-error {
+        display: block;
+        color: #ff0000;
+        margin: 5px 0;
+    }
+
+    .log-entry-type-error {
+        color: #ff0000;
+    }
+
+    .expandable:not([hidden]) + br {
+        display: none;
+    }
+
+    span {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        word-break: break-all;
+        word-break: break-word;
+    }
+}
+
+/* Console */
+
+#txt-eval {
+    display: block;
+    width: 100%;
+    margin: 25px 0 5px 0;
+    font-family: $font-family-monospace;
+    font-size: 14px;
+    font-size: 1.4rem;
+    resize: vertical;
+}
+
+#console-output {
+    height: calc(100vh - 350px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.console-command {
+    color: #279627;
+}
+
+.console-error {
+    color: #ff0000;
+}
+
+.console-help {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #9a7112;
+}

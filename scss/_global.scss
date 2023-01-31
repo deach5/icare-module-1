@@ -1,0 +1,176 @@
+/**************************************************************************************************************************
+GLOBAL
+***************************************************************************************************************************/
+
+[hidden] {
+    display: none !important;
+}
+
+/* In an iframe, if there's a scrollable container with [width: 100%; max-width: px] then iPhone will not restrict the width unless an ancestor
+is given an explicit size. 100% is no good. */
+html.isApp,
+.isApp body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    -ms-overflow-style: scrollbar;
+    background: #F9F8F7;
+    background: #fff;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Make the body clickable in iOS so that the menu can be closed */
+.iOS body {
+    cursor: pointer;
+}
+
+img[usemap],
+map area {
+    outline: 0;
+}
+
+a.email-link,
+a.underlined-link {
+    text-decoration: underline;
+    color: #0000ff;
+}
+
+.panel-body h2 {
+    font-size: 18px;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-input-placeholder {
+    color: #383838 !important;
+}
+
+:-moz-placeholder {
+    color: #383838 !important;
+}
+
+::-moz-placeholder {
+    color: #383838 !important;
+}
+
+:-ms-input-placeholder {
+    color: #383838 !important;
+}
+
+legend>span {
+    display: block;
+    margin: 0 0 10px;
+}
+
+legend {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.keyboard-nav *:focus,
+.keyboard-nav a:focus,
+.keyboard-nav input[type="file"]:focus,
+.keyboard-nav input[type="radio"]:focus,
+.keyboard-nav input[type="checkbox"]:focus,
+.keyboard-nav .btn:focus,
+.keyboard-nav .btn:active:focus,
+.keyboard-nav .btn.active:focus,
+.keyboard-nav .btn.focus,
+.keyboard-nav .btn.active.focus,
+.keyboard-nav .focussed {
+    outline: 2px solid red;
+    outline-offset: 2px;
+}
+
+.keyboard-nav .focussed-pseudo:before {
+    content: "";
+    position: absolute;
+    display: block;
+    border: 2px solid red;
+}
+
+.keyboard-only {
+    display: none;
+
+}
+
+.keyboard-nav {
+    .keyboard-only {
+        display: inline;
+        font-size: .8rem;
+    }
+}
+
+
+body:not(.keyboard-nav) *:focus {
+    outline: none;
+}
+
+.panel a:not(.btn-primary) {
+    text-decoration: underline;
+    color: $primary;
+
+    &.pink{
+        color: $pink;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+button,
+[role="button"] {
+    cursor: pointer;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.modal-dialog {
+    margin-top: 30px;
+}
+
+textarea {
+    resize: none;
+}
+
+
+.panel.min-500 {
+    min-height: 500px;
+}
+
+.panel.min-550 {
+    min-height: 550px;
+}
+
+.panel.min-600 {
+    min-height: 600px;
+}
+
+.panel.min-650 {
+    min-height: 650px;
+}
+.panel.min-800 {
+    min-height: 800px;
+}
+

@@ -1,0 +1,51 @@
+[data-activity="click-and-reveal"]{
+    /* text area */
+    &[data-textinput="true"]
+    {
+        textarea
+        {
+            width:100%;
+            border:1px solid #707070;
+            border-radius:5px;
+            box-shadow: inset 0px 0px 20px 0px rgba(14,29,66,0.27);
+            text-align:left;
+            min-height:210px;
+            margin-bottom:1rem;
+            padding:20px;
+        }
+
+    }
+    .show-on-item-done.item-done
+    {
+        display: block !important;
+    }
+    &[data-reveal-type="show"]{
+        .click-and-reveal-item:not(.item-active) {
+            display: none;
+        }
+    }
+    .done-indicator.gfx {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 26px;
+        height: 26px;
+        use {
+            stroke: $primary;
+            transition: stroke 0.2s;
+        }
+    }
+
+    [data-reveal].btn{
+
+        &:focus,
+        &:active{
+            .done-indicator.gfx {
+                use{
+                   stroke: white; 
+                }
+            }
+        }
+    }
+}

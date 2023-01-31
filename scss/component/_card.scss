@@ -1,0 +1,23 @@
+
+.card{
+    overflow:hidden;
+    border-radius: $border-radius;
+    box-shadow: $drop-shadow;
+
+    margin-bottom: 4rem;
+
+    .card-top{
+        background-color: $dark;
+        color: $white;
+        padding: 1.25rem;
+        margin-bottom: 0;
+    }
+
+    .card-top,
+    .card-img,
+    .card-img-top{
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+    }
+    
+}

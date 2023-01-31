@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/styles.css?v=24" rel="stylesheet" media="screen">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style type="text/css">
+    html, body, #msg
+    {
+        height: 100%;
+    }
+    #msg
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6em;
+    }
+    </style>
+</head>
+<body id="content-page" class="page-loading-mask-in">
+    <section id="msg">Your course has been opened in a new window</section>
+    <script type="text/javascript">
+    var getAPI = {
+        scormVersion: '1_2',
+        findAPITries: 0,
+        maxTries: 10,
+        // connect to the API
+        'scanAPI': function (win) {
+            //
+            var api = (this.scormVersion === '1_2' ? 'API' : 'API_1484_11');
+            while ((win[api] == null) && (win.parent != null) && (win.parent != win)) {
+                this.findAPITries++;
+                if (this.findAPITries > this.maxTries) return null;
+                win = win.parent;
+            }
+            return win[api];
+        },
+        // find API in windows
+        'findAPI': function (win) {
+            var api;
+            if ((win.parent != null) && (win.parent != win)) api = this.scanAPI(win.parent);
+            if ((api == null) && (win.opener != null)) api = this.scanAPI(win.opener);
+            return api;
+        }
+    }
+    window.API = getAPI.findAPI( window );
+
+    var win = window.open( 'about:blank' );
+    win.parent = window;
+    win.location = window.location.toString().replace( 'launch.html', 'index.html' );
+
+    // go back on unload
+    win.onpagehide = function ( e ) {
+        if ( ! e.persisted && e.target.location.toString() !== 'about:blank' )
+            window.history.back();
+    };
+    </script>
+</body>
+</html>

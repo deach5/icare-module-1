@@ -1,0 +1,281 @@
+.progress-modal {
+    .modal-content {
+        background: #fff;
+        padding: 15px 10px 5px;
+    }
+
+    h1 {
+        color: $primary;
+        font-weight: bold;
+        line-height: normal;
+        margin-bottom: 10px;
+    }
+}
+
+.progress-item {
+    margin: 8px 0;
+
+    .title {
+        display: block;
+    }
+
+    &.course .title {
+
+        color: $primary;
+        font-weight: bold;
+    }
+
+    &.module .title {
+        color: $primary;
+        margin-bottom: 3px;
+    }
+
+    &.topic .title {
+        color: $primary;
+        margin-bottom: 3px;
+        &[disabled]{
+            color: rgba($primary, 0.8);
+            pointer-events: none;
+            cursor: not-allowed;
+            &:hover,
+            &:focus{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.progress-modal {
+    .module-container {
+        &.expanded .module .title, 
+        &.current-location .module .title {
+            font-weight: bold;
+        }
+    }
+
+    .topic-container.current-location .topic .title {
+        font-weight: bold;
+    }
+
+    .module-container {
+        padding: 0 4px;
+        margin-top: 20px;
+
+        &.expanded {
+            background: $primary;
+            padding: 4px;
+        }
+    }
+}
+
+.progress-item-divider {
+    width: 100%;
+    height: 4px;
+
+    > div {
+        width: 100%;
+        height: 4px;
+        border-bottom: 1px solid $primary;
+    }
+
+    margin-top: 4px;
+}
+
+.progress-modal-bar {
+    height: 25px;
+    width: 100%;
+    .ost{
+        line-height: 25px;
+        color:#fff;
+        font-weight: bold;
+        text-align: right;
+        display: block;
+        width: 100%;
+        padding: 1px 3px 0;
+    }
+}
+
+.progress-item.course .progress-modal-bar {
+    height: 30px;
+     .ost{ padding-top: 4px; }
+}
+
+.progress-modal-bar > div {
+    height: 100%;
+
+    > div {
+        height: 100%;
+    }
+
+    position: relative;
+    width: 100%;
+    background-color: $secondary;
+
+    &[data-percentage="0"] {
+        background-color: $secondary;
+        .ost{ display: none; }
+    }
+
+    > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color:$primary;
+    }
+
+    &[data-percentage="100"] > div {
+        background-color: $primary;
+    }
+}
+
+.location-indicator {
+    position: relative;
+    float: left;
+    width: 14px;
+    height: 20px;
+    margin-top: -5px;
+    img {
+        display: none;
+        position: absolute;
+        width: calc(50px / 1.5);
+        height: 50px;
+        top: -32px;
+        right: -5px;
+    }
+}
+
+.progress-item.course .location-indicator img {
+    top: 8px;
+}
+
+.current-location > .progress-item .location-indicator img {
+    display: block;
+}
+
+.progress-item {
+    &.course .location-indicator {
+        display: none;
+    }
+
+    &.module .location-indicator {
+        width: 20px;
+    }
+
+    [data-navigate]{
+        cursor: pointer;
+    }
+}
+
+.single-module .progress-item.topic .location-indicator {
+    width: 20px;
+}
+
+.progress-item.topic .location-indicator {
+    width: 40px;
+}
+
+.title-container {
+    overflow: hidden;
+}
+
+.progress-item {
+    &.course .progress-modal-bar {
+        padding-right: 5px;
+        margin-bottom: 9px
+    }
+
+    &.module .progress-modal-bar {
+        padding-left: 20px;
+
+    }
+}
+
+.single-module .progress-item.topic .progress-modal-bar {
+    padding-left: 20px;
+
+}
+
+.progress-item.topic .progress-modal-bar {
+    padding-left: 40px;
+
+}
+
+#progress-modal-close-btn-container {
+    margin-top: 20px;
+
+    > div {}
+
+    span {
+        display: block;
+        text-align: center;
+        margin-bottom: 6px;
+        color: $primary 
+    }
+
+    button {
+        display: block;
+        width: 100%;
+    }
+}
+
+.single-module .progress-item.module {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    .progress-modal h1 {
+        margin-bottom: 20px;
+
+    }
+
+    .progress-item.course .title {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        margin-bottom: 8px;
+
+    }
+
+    #progress-modal-close-btn-container {
+        > div {
+            float: right;
+        }
+
+        span {
+            display: inline;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        button {
+            display: inline-block;
+            width: auto;
+            margin-left: 30px
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .progress-modal h1 {
+        margin-bottom: 30px;
+    }
+
+    .progress-item {
+        &.module .title, 
+        &.topic .title {
+            line-height: normal;
+            margin-bottom: 0;
+        }
+    }
+
+    .progress-item-divider {
+        margin-top: 0;
+    }
+
+    .progress-modal-bar {
+        margin-top: 8px;
+    }
+
+    .progress-item.course .progress-modal-bar {
+        margin-top: 3px;
+    }
+}

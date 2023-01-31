@@ -1,0 +1,79 @@
+/*
+    Click Buttons
+*/
+
+ul.click-btns,
+.click-btns > ul {
+    list-style: none;
+    padding: 0;
+}
+
+.click-btns {
+    li:not(.item-done) .done-indicator {
+        display: none;
+    }
+}
+
+[data-activity="click-btns"].activity-done.check-all-when-done .done-indicator {
+    display: block;
+}
+
+.click-btns-modal.standard {
+    h1 {
+        font-size: 22px;
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .modal-footer {
+        border-top: none;
+    }
+}
+
+.click-btns.standard {
+    .click-btn {
+        display: block;
+        width: 100%;
+        margin: 14px 0;
+        padding: 10px 52px 10px 16px;
+        text-align: left;
+        border-radius: $border-radius;
+        background-color: #FFF;
+        white-space: normal;
+        color: #000;
+        font-size: 18px;
+        font-size: 1.8rem;
+
+        > span {
+            font-size: 18px;
+            font-size: 1.8rem;
+        }
+    }
+
+    img.done-indicator {
+        position: absolute;
+        right: 10px;
+        top: 7px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .click-btn {
+        &:focus, &:hover {
+            background-color: #B0DCB3;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .click-btns.standard .click-btn {
+        font-size: 15px;
+        font-size: 1.5rem;
+
+        > span {
+            font-size: 15px;
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,167 @@
+[data-type="menu"]{
+    body{
+        background-image: url('../content/images/bgs/menu.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;                
+        background-position: right;
+
+        @media(max-width:767.9px)
+        {
+            background-position: center;
+            background-image: url('../content/images/bgs/menu_m.jpg');
+        }
+
+    }
+    
+    .menu-page{
+
+        position: relative;
+        overflow: hidden !important;
+
+
+        .menu-content{
+            background-color: rgba($white, 0.875);
+            padding: 1rem; 
+            .topic-mnu{
+                padding: 0;
+                margin: 0;
+
+                li{
+                    list-style: none;
+                    padding: 0;        
+                }
+
+            }
+
+            .menu-btn{
+                
+                background-color: white;
+                text-align: left;
+                
+                font-size: 1.66rem;
+                padding: 1.5rem;
+                padding-right: 50px;
+                padding-left: 60px;
+                @include media-breakpoint-up('md'){
+                    padding-left: 40px;
+                }
+                margin: 0px;
+                margin-bottom: 20px;
+                border: none;
+                position: relative;               
+                width: 100%;                
+                display: flex;
+
+                @media (max-width: 767px) {
+                    font-size: 1.5em;
+                    margin-bottom: 0;
+                }
+
+                @media (max-width: 500px) {
+                    font-size: 1.3em;
+                    margin-bottom: 0;
+                }
+
+                .title{
+                    flex-grow: 1;
+                    text-align: left;
+                    line-height: 1;
+                    align-self: center;
+                    word-break:break-word;
+                    position: relative;
+
+                    .int{
+                        position: absolute;
+                        left: -20px
+                    }
+                }
+
+                .duration{
+                    font-family: 'Gotham';
+                    font-size: .9rem;
+                    margin: 0;
+                    margin-top: 2px;
+                }
+                
+                .topic-status{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    justify-content: center;
+                    background-color: #007B83;
+                    position: absolute;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    width: 40px;
+                    
+                    &:before{
+                        content: '';
+                        color: black;
+                        display: block;
+                        height: 100%;
+                        width: 100%;                        
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 40% auto;
+                    }
+                }
+
+
+                &.disabled{
+
+                    background-color: #ffffff;
+                    
+                    .topic-status{
+                        background-color: #CBCBCB;
+                        &:before{                        
+                            background-image: url( "../content/images/icons/mnu-locked.svg" );
+                      
+                        }
+                    }    
+                }
+                &.available{     
+                    background-color: #D0006F;
+                    color: #fff;
+                    &:hover, &:focus {
+                        color: rgba(#ffffff, 0.8);
+                    }
+
+                    .topic-status{
+                        background-color: #D0006F;
+                        &:before{
+                            background-image: url( "../content/images/icons/mnu-next.svg" );
+                            
+                        }
+                    }                                    
+                }
+                &.complete{                    
+                    background-color: #fff;                      
+                    &:hover, &:focus {
+                        color: rgba(#111111, 0.8);    
+                    }
+
+                    .topic-status{
+                        background-color: #007B83;
+                        &:before{
+                            background-image: url( "../content/images/icons/mnu-complete.svg" );
+                            
+                        }
+                    }
+                    
+
+                }
+
+            }
+
+        }
+    
+    }
+}
+
+@keyframes backgroundScroll {
+    0%   {background-position: 0 0;}
+    50%  {background-position: 100% 0;}
+    100% {background-position: 0 0;}
+}

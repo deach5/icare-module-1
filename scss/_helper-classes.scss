@@ -1,0 +1,104 @@
+/**************************************************************************************************************************
+HELPER CLASSES
+***************************************************************************************************************************/
+
+/*
+See below for old helper classes and their correct bs counterparts
+check bs docs for more info
+
+ul.list-style-none
+use .list-unstyled
+
+.full-width
+use .w-100
+
+.fs-*
+dont use, use correct component or semantic elements
+
+.fg-*
+use .text-*
+ 
+.zero-padding-* + .zero-margin-* + .padding-* + .margin-*
+use .p*-* or .m*-*
+
+.pos-abs + .pos-rel
+use .position-*
+*/
+
+.hilite { color: #dc1929; }
+
+a[target="_blank"],
+.split-overflowed-text, 
+.email-link {
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+}
+
+.split-overflowed-text.use-hyphens {
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.elipsis-overflowed-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+    .d-block mx-auto-sm { 
+        display: block; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    .modal.full-width .modal-dialog { 
+        width: calc(100% - 40px) !important; 
+        margin-left: auto; 
+        margin-right: auto; 
+        max-width: 1600px; 
+    }
+
+    .modal.max-width-content .modal-dialog {
+        max-width: 940px;
+    }
+
+    .auto-width-sm { 
+        display: inline-block !important; 
+        width: auto !important; 
+    }
+}
+
+@media (min-width: 992px) {
+    .auto-width-md { 
+        display: inline-block !important; 
+        width: auto !important; 
+    }
+}
+
+.w-90 {
+    width: 90% !important; 
+}
+
+.top-0{
+    top: 0;
+}
+.left-0{
+    left: 0;
+}
+.bottom-0{
+    bottom: 0;
+}
+.right-0{
+    right: 0;
+}
+  

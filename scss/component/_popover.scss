@@ -1,0 +1,100 @@
+/*
+Bootstrap popover with a large arrow
+*/
+
+.popover {
+    &.large-arrow {
+        font-size: 19px;
+        font-size: 1.9rem;
+
+        > .arrow {
+            border-width: 35px;
+
+            &:after {
+                border-width: 34px;
+            }
+        }
+
+        &.top {
+            margin-top: -34px;
+
+            > .arrow {
+                bottom: -35px;
+                margin-left: -35px;
+                border-bottom-width: 0;
+
+                &:after {
+                    margin-left: -34px;
+                    border-bottom-width: 0;
+                }
+            }
+        }
+
+        &.bottom {
+            margin-top: 34px;
+
+            > .arrow {
+                top: -35px;
+                margin-left: -35px;
+                border-top-width: 0;
+
+                &:after {
+                    margin-left: -34px;
+                    border-top-width: 0;
+                }
+            }
+        }
+
+        &.left > .arrow:after, &.right > .arrow:after {
+            bottom: -34px;
+        }
+
+        &.left {
+            margin-left: -34px;
+
+            > .arrow {
+                right: -35px;
+                margin-top: -35px;
+                border-right-width: 0;
+
+                &:after {
+                    border-right-width: 0;
+                }
+            }
+        }
+
+        &.right {
+            margin-left: 34px;
+
+            > .arrow {
+                left: -35px;
+                margin-top: -35px;
+                border-left-width: 0;
+
+                &:after {
+                    border-left-width: 0;
+                }
+            }
+        }
+    }
+
+    &.light-brown {
+        background-color: #f9cc84;
+
+        &.top > .arrow:after {
+            border-top-color: #f9cc84;
+        }
+
+        &.right > .arrow:after {
+            border-right-color: #f9cc84;
+        }
+
+        &.bottom > .arrow:after {
+            border-bottom-color: #f9cc84;
+        }
+
+        &.left > .arrow:after {
+            border-left-color: #f9cc84;
+        }
+    }
+}

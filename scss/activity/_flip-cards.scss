@@ -1,0 +1,154 @@
+.flip-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;    
+    list-style: none;    
+    padding: 0;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 400;
+
+
+    > li,
+    .flip-item {
+        
+        width: 100%;
+        margin: 10px 2px;
+
+    }
+
+    p { 
+        margin-bottom: .5rem;
+        margin-right: .5rem; 
+    }
+
+    @media (min-width: 768px) {
+
+        /*flex-direction: row;
+        flex-wrap: wrap; 
+        justify-content: center;*/
+        
+        .flip-card {
+            margin: 0 10px;
+        }    
+
+    }
+
+
+    @media (min-width: 992px) {
+        flex-direction: row;
+        /*justify-content: space-between;*/
+        flex-wrap: wrap;
+
+    }
+
+    .flip-card{
+
+        background: none;
+        border: none;
+        width: 100%;
+        padding: 0;
+        padding-bottom: 100%;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+
+        .faces{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+
+            .face{
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                text-align: center;
+                border: 2px solid $tertiary;
+                border-radius: 0;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+                display: flex;
+                -webkit-box-shadow: 0px 3px 6px #00000029;
+                box-shadow: 0px 3px 6px #00000029;
+                overflow: hidden;
+
+                > div {
+                    width: 100%;
+                    
+                    padding: 0;;
+                }
+
+
+                &.front{
+                   
+                    z-index: 2;
+                    transform: rotateY(0deg);// scale(0.9);
+                    
+                    &::hover{
+                        background: $primary;
+                    }
+                    div > p {
+                        position: absolute;
+                        padding: 25px 10px;
+                        text-align: center;
+                        font-size: 1.8rem;
+                        line-height:1.25;
+                    }
+                    svg.swoop{
+                        position: absolute;
+                        bottom: 0;
+                    }
+                }
+                &.back{
+                    transform: rotateY(-180deg);// scale(1);
+                    background: $white;
+                    color: $dark;
+                    
+                    text-align: left;
+                    > div { 
+                        padding: 1.25rem 1rem;
+                        justify-content: center;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        &.flipped{
+            .faces .face{
+                &.back {
+                    transform: rotateY(0deg) ;//scale(1.02);
+                }
+                &.front {
+                    transform: rotateY(180deg);// scale(0.9);
+                }
+            }
+        } 
+
+        .correct-icon {
+            position: absolute; top: 10px; right: 10px; width: 28px; color: $primary;
+        }
+        
+
+        .icon-flip {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+            width: 34.27px;
+            height: 39.907px;
+        }
+        .flip-card-image { flex-shrink: 0; height: 100%; width: auto; max-width: initial;}
+    }
+
+ }

@@ -1,0 +1,14 @@
+/*
+Locked Panel
+*/
+
+/* hide all locked panels */
+.locked-panel,
+.lock-overlay{
+    display: none !important;
+}
+
+.parent-lock{
+    display: none !important;
+}
+

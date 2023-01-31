@@ -1,0 +1,146 @@
+/*
+Usage:
+@include fontface( $name, $src, $formats: [ woff ], $variants: [ [ null normal ] ], $local: null, $class: true )
+{
+    $extra;
+}
+
+Params:
+$name    str
+    name to be used in font-family rules
+    ex: "Open Sans"
+$src str
+    filename without extention and any variant naming (ie -medium or -bolditalic)
+    this assumes file naming is consistent across file types and variants
+    ex: ../fonts/open-sans/open-sans
+$formats list
+    list of file extentions to use
+    ex: woff ttf
+$variants list
+    list of variants to include in format: [variant-suffix] weight[i]
+    variant-suffix is the part of the filename which defines which variant it's for
+    weight is the numerical weight or named weight to use
+    i defines whether the variant is in italics or not
+    ex:
+        -Light 100i
+        -Bold 600
+        -BoldItalic 600i
+        -Book normal
+$local   str
+    name of local font to use if it exists on user's system
+    ex: "Open Sans"
+$classes bool
+    whether to generate classes for the font and its variants
+    a string can be passed instead to control class naming
+    ex classes:
+        f-open-sans
+        f-open-sans-600i
+$extra   rules
+    any rules passed to the mixin will be included in each @font-face rule
+    ex:
+        unicode-range: U+26;
+    see: https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
+
+Examples:
+@include fontface( "Open Sans", '../fonts/open-sans/open-sans', [ woff, ttf ], [ -Medium 500, -MediumItalic 500i, -Bold bold, -BoldItalic boldi, -Book normal, -BookItalic normali ] )
+{
+    something: false;
+}
+
+@include fontface( 'My Super Font 27', '../fonts/msf27/My Super Font 27', ttf, $class: 'msf' );
+*/
+@mixin fontface( $name, $src, $formats: [ woff ], $variants: [ [ null normal ] ], $local: null, $class: true )
+{
+    @if $class == true
+    {
+        $class: to-lower-case( $name );
+        $idx: str-index( $class, ' ' );
+        @while $idx
+        {
+            $class: str-slice( $class, 1, $idx - 1 ) + '-' + str-slice( $class, $idx + 1 );
+            $idx: str-index( $class, ' ' );
+        }
+    }
+
+    @each $variant in $variants
+    {
+        $srcs: [];
+        $end: null;
+
+        @if $local
+        {
+            $srcs: append( $srcs, local( $local ) );
+        }
+
+        @if length( $variant ) == 2
+        {
+            $end: nth( $variant, 1 );
+            $variant: nth( $variant, 2 );
+        }
+        @else
+        {
+            $end: "-#{$variant}";
+        }
+
+        @each $format in $formats
+        {
+            $fmt: $format;
+            @if $fmt == 'otf'
+            {
+                $fmt: 'opentype';
+            }
+            @else if $fmt == 'ttf'
+            {
+                $fmt: 'truetype';
+            }
+            @else if $fmt == 'eot'
+            {
+                $fmt: 'embedded-opentype';
+            }
+
+            $srcs: append( $srcs, url( "#{$src}#{$end}.#{$format}" ) format( "#{$fmt}" ) );
+        }
+
+        $weight: "#{$variant}";
+        $style: null;
+
+        @if str-index( $weight, 'i' )
+        {
+            $weight: str-slice( $weight, 0, -2 );
+            $style: italic;
+        }
+
+        @if $weight == 'normal' or $weight == '400'
+        {
+            $weight: null;
+        }
+
+        @font-face
+        {
+            font-family: $name;
+            src: join( $srcs, [], $separator: comma, $bracketed: false );
+            font-weight: #{$weight};
+            font-style: $style;
+            @content;
+        }
+
+        @if $class
+        {
+            $vclass: $class;
+            @if $weight
+            {
+                $vclass: $vclass + '-' + $weight;
+            }
+            @if $style
+            {
+                $vclass: $vclass + '-i';
+            }
+            .f-#{$vclass}
+            {
+                font-family: $name;
+                font-weight: #{$weight};
+                font-style: $style;
+            }
+        }
+    }
+}

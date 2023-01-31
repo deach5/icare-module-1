@@ -1,0 +1,50 @@
+.feedback
+{
+
+    &,
+    .show-other-feedback.correct &.incorrect,
+    .show-other-feedback.incorrect &.correct
+    {
+        display:none;
+    }
+
+    .correct &.correct,
+    .incorrect &.incorrect,
+    .show-other-feedback.correct &.correct,
+    .show-other-feedback.incorrect &.incorrect
+    {
+        display:block;
+    }
+
+    .show-specific-feedback.correct &,
+    .show-specific-feedback.incorrect &
+    {
+        &,
+        &.correct,
+        &.incorrect
+        {
+            display: none;
+
+            &.show
+            {
+                display: block;
+            }
+        }
+    }
+
+    .show-other-feedback.correct &.correct,
+    .show-other-feedback.incorrect &.incorrect
+    {
+        padding: 10px;
+    }
+
+    &.correct
+    {
+        background-color: #A8CB6C;
+    }
+
+    &.incorrect
+    {
+        background-color: #D9A3AE;
+    }
+}

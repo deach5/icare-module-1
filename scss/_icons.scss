@@ -1,0 +1,41 @@
+svg
+{
+    max-width: 100%;
+    height: auto;
+    fill: currentColor;
+    stroke: currentColor;
+
+    &.icon
+    {
+        width: 2rem;
+    }
+
+    &.icon-decor
+    {
+        position: absolute;
+        pointer-events: none;
+        width: 20rem;
+        opacity: .5;
+
+        &.icon-top-left
+        {
+            top: 0;
+            right: 100%;
+        }
+        &.icon-top-right
+        {
+            top: 0;
+            left: 100%;
+        }
+        &.icon-bottom-left
+        {
+            bottom: 0;
+            right: 100%;
+        }
+        &.icon-bottom-right
+        {
+            bottom: 0;
+            left: 100%;
+        }
+    }
+}

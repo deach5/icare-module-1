@@ -1,0 +1,172 @@
+.key-message{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 240% 120%;
+
+    &.blue{
+        background-color: $blue;
+        background-image: url(../content/images/bgs/keymessage-pattern-purple.svg);
+    }
+    &.purple{
+        background-color: $purple;
+        background-image: url(../content/images/bgs/keymessage-pattern-teal.svg);
+    }
+    &.pink{
+        background-color: $pink;
+        background-image: url(../content/images/bgs/keymessage-pattern-blue.svg);
+    }
+    &.teal{
+        background-color: $teal;
+        background-image: url(../content/images/bgs/keymessage-pattern-pink.svg);
+    }
+    
+
+   
+
+    .panel{
+        position: relative;
+        min-height: calc(240px + 4rem);
+        max-height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        padding: 2rem;
+
+        @media(max-width:767px){
+            max-height: none;
+            
+        }       
+        
+        .message{
+            blockquote{                
+                color: #FFF;
+                font-size: 3.125rem;
+                text-align: center;
+                font-family:$headings-font-family;
+                line-height:1;
+            }
+            @media ( max-width: 575px ) {
+                blockquote{
+                    font-size: 2.5rem;
+                }
+            }
+            
+        }
+    }
+
+        @media(max-width:1024px){
+            background-image: none !important;
+        }
+
+}
+
+.final-message{
+
+   >.container-fluid{
+
+    position: relative;
+
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom:0%;
+        height: 350px;
+        width: 554px;
+    }
+    &.blue{
+        background-color: $blue;
+        &::after{
+            background-image: url(../content/images/bgs/swoosh-purple.svg);
+        }
+        @media(max-width:1919px){
+            background-image: url(../content/images/bgs/swoosh-purple.svg);
+        }
+        
+    }
+    &.purple{
+        background-color: $purple;
+        &::after{
+            background-image: url(../content/images/bgs/swoosh-teal.svg);
+        }
+        @media(max-width:1919px){
+            background-image: url(../content/images/bgs/swoosh-teal.svg);
+        }
+        
+    }
+    &.pink{
+        background-color: $pink;
+        
+        &::after{
+            background-image: url(../content/images/bgs/swoosh-blue.svg);
+        }
+        @media(max-width:1919px){
+            background-image: url(../content/images/bgs/swoosh-blue.svg);
+        }
+    }
+    &.teal{
+        background-color: $teal;
+        
+        &::after{
+            background-image: url(../content/images/bgs/swoosh-pink.svg);
+        }
+        @media(max-width:1919px){
+            background-image: url(../content/images/bgs/swoosh-pink.svg);
+        }
+        
+    }
+    .message{
+        p{
+            color: white;
+        }
+    }
+    background-repeat: no-repeat;
+    background-position: center center;
+
+
+        @media(max-width:1919px){
+            background-position: top right;
+
+            &::after{
+                background-image:none !important;
+                display: none;
+
+                
+            }
+    
+        }
+    }
+
+ 
+
+    .panel{
+        position: relative;
+        min-height: calc(240px + 4rem);
+        max-height: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        margin: auto;
+
+        @media(max-width:767px){
+            max-height: none;
+        }       
+        
+        .message{
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            flex-flow: column;
+
+            blockquote{                
+                color: #FFF;
+                font-size: 1.8rem;
+                text-align: center;
+                font-family:$headings-font-family;
+            }
+            
+        }
+    }
+
+}

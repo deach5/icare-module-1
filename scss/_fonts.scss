@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Gotham';
+    src: url('../content/fonts/Gotham.woff2') format('woff2'),
+        url('../content/fonts/Gotham.woff') format('woff'),
+        url('../content/fonts/Gotham.otf') format('otf'),
+        url('../content/fonts/Gotham.svg#Gotham') format('svg');
+    font-weight:300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gotham-Medium';
+    src: url('../content/fonts/Gotham-Medium.woff2') format('woff2'),
+        url('../content/fonts/Gotham-Medium.woff') format('woff'),
+        url('../content/fonts/Gotham-Medium.otf') format('otf'),
+        url('../content/fonts/Gotham-Medium.svg#Gotham-Medium') format('svg');
+    font-weight:300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gotham-Black';
+    src: url('../content/fonts/Gotham-Black.woff2') format('woff2'),
+        url('../content/fonts/Gotham-Black.woff') format('woff'),
+        url('../content/fonts/Gotham-Black.otf') format('otf');
+        
+    font-weight:300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Sauna-Bold';
+    src: url('../content/fonts/Sauna-Bold.otf') format('otf'),
+        url('../content/fonts/Sauna-Bold.woff2') format('woff2'),
+        url('../content/fonts/Sauna-Bold.woff') format('woff'),        
+        url('../content/fonts/Sauna-Bold.svg#Sauna-Bold') format('svg');
+    font-weight:300;
+    font-style: normal;
+    font-display: swap;
+}
+
+.gotham-medium{
+    font-family:'Gotham-Medium', Arial, Helvetica, sans-serif;
+}
+
+
+

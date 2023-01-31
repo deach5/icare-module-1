@@ -1,0 +1,15 @@
+// extra background and text colours
+
+@each $color, $value in $colors {
+  @include bg-variant(".bg-#{$color}", $value, true);
+}
+
+@if $enable-gradients {
+  @each $color, $value in $colors {
+    @include bg-gradient-variant(".bg-gradient-#{$color}", $value, true);
+  }
+}
+
+@each $color, $value in $colors {
+  @include text-emphasis-variant(".text-#{$color}", $value, true);
+}

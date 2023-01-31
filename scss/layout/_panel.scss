@@ -1,0 +1,19 @@
+
+.panel {
+   
+    padding: 0px;
+    margin: 0;
+    padding-top:7rem;
+    padding-bottom: 7rem;
+
+    border-top: 1px solid $primary;
+
+
+    @include media-breakpoint-down( 'xs' )
+    {
+        &:last-child
+        {
+         
+        }
+    }
+}

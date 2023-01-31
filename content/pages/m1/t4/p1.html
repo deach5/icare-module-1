@@ -1,0 +1,75 @@
+<style>
+
+    .panel a:not(.btn-primary) {
+        text-decoration: underline;
+        color: #004C97;
+    }
+    [data-activity="click-and-reveal"][data-reveal-type="show"] .click-and-reveal-item.item-done{
+        display: block;
+    }
+
+</style>
+
+<header id="page-header" class="pink">
+    <div class="container">
+        <h1>
+            <div>Thanks for your time</div>
+        </h1>
+    </div>
+</header>
+
+<div class="horizontal-panels">
+
+    <!-- PANEL 01 -->
+    <div class="container-fluid ignore-bottom-border">
+        <div class="container">
+            <section class="panel">
+                <div class="container">
+                    <div data-activity="click-and-reveal" data-reveal-type="show" data-mandatory="true">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <p><strong>You’ve almost completed the first step in your Respect & Resilience journey.</strong></p>
+                                <p>In this module, you’ve explored customer misbehaviour and learnt five strategies to help get a customer on side. While every interaction is different, you can build connections and manage customer misbehaviour by reflecting on the information covered in this module and practising the skills each day on the job.</p>
+                                <p>Before you go, download your <strong>Case study in Action</strong> by <strong>selecting</strong> the button below. </p>
+
+                                <p><button type="button" id="dl-plan" class="btn btn-primary pink" data-download data-reveal=".reveal.fb1"><span>Download my Case study in Action </span></button></p>
+                                
+                                <div class="row reveal fb1 mt-5">
+                                    <div class="col-12">
+                                        <p>Here’s a handy <a href="content/docs/quick_guide.pdf" target="_blank" rel="noopener noreferrer">quick guide</a> that contains key information you can refer to as you practise your new skills.</p>
+                                        <p>Don’t worry if you don’t remember everything right away. Even the most experienced people are still learning and refining these skills all the time.</p>
+                                        <p>When you’re ready to continue your Respect & Resilience journey, look at <strong>Module 2 – Managing an escalating customer situation</strong>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- PANEL 02 -->
+    <div class="container-fluid final-message">
+        <div class="container-fluid purple">
+            <section class="container finalpanel panel">
+                <div class="message">
+                    <blockquote>Select the button to complete this module.</blockquote>
+                    <button type="button" data-mark-course-as-complete-and-exit class="btn btn-primary"><span>Save &amp; Exit</span></button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function pageLoaded() {
+        $('[data-download]').on('click', function() {
+            $('.hideText').hide()
+            rebus.pdf.build.init();
+            
+        });
+    }
+
+</script>

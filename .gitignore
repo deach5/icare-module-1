@@ -1,0 +1,25 @@
+# ignore build requirements
+node_modules/
+.vscode/
+*.sublime*
+*.pyc
+locations.py
+.taters.json
+# ignore built files
+js/
+css/
+package-lock.json
+package/
+content/images/icons.svg
+# ignore built schema files
+src/schemas/scorm12/imsmanifest.xml
+src/schemas/scorm2004-2/imsmanifest.xml
+src/schemas/scorm2004-3/imsmanifest.xml
+src/schemas/scorm2004-4/imsmanifest.xml
+src/schemas/xapi/tincan.xml
+adlcp_rootv1p2.xsd
+ims_xml.xsd
+imscp_rootv1p1p2.xsd
+imsmanifest.xml.hb
+imsmd_rootv1p2p1.xsd
+content/images/icons/12-col-guide.png

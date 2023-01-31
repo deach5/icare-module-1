@@ -1,0 +1,104 @@
+/*
+Assessment
+*/
+
+
+[data-activity="assessment"] .multiple-choice-quiz-options .icon-tick-cross{ display: none !important;}
+[data-activity="assessment"] > .container {
+    height: 100%;
+}
+
+[data-activity="assessment"] > .container > {
+    
+    section
+    {
+        display: none;
+
+        &.active
+        {
+            display: block;
+        }
+    }
+
+    .panel
+    {
+        display: none;
+        height: 100%;
+
+        &.active
+        {
+            display: block;
+            min-height: 700px;
+        }
+    }
+}
+
+.assessment-question-panel h3 {
+    font-weight: normal;
+    color: $dark;
+    font-size: 60px;
+    font-size: 6rem;
+    line-height: 54px;
+    line-height: 5.4rem;
+}
+
+.assessment-question {
+    margin-top: 10px;
+}
+
+.btn-assessment-try-again {
+    color: $light;
+
+    &:hover, 
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+@media (min-width: 576px) {
+    .assessment-question-panel h3, 
+    .assessment-question {
+        float: left;
+    }
+
+    .assessment-question-panel h3 {
+        width: 90px;
+        margin-left: -60px;
+    }
+
+    .assessment-question {
+        width: calc(100% - 100px);
+        margin-top: 0;
+    }
+
+    .assessment-question-panel form {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .assessment-question-panel h3 {
+        text-align: center;
+    }
+}
+
+.has-ancillary {
+    form, 
+    .assessment-ancillary {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .has-ancillary {
+        form, 
+        .assessment-ancillary {
+            width: 50%;
+            float: left;
+        }
+
+        form {
+            padding-left: 10px;
+        }
+    }
+}
